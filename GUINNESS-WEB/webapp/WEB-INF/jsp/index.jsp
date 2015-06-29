@@ -7,7 +7,7 @@
 <c:if test="${not empty sessionUser.userId}">
 	<c:redirect url="/groups/form" />
 </c:if>
-<title>Stag Study</title>
+<title>{stag}</title>
 <meta charset="utf-8">
 <%@ include file="./commons/_favicon.jspf"%>
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
@@ -17,7 +17,7 @@
 	<div id="jumbotron-container">
 		<div class="content wrap">
 			<div id="jumbotron">
-				<h1><span>Stag</span>와 함께!</h1>
+				<h1><img src="/img/stagwhitelogo.png" />와 함께!</h1>
 				<div class="subscribe">Stag에서 나만의 학습 노트를 작성하고, 스터디 멤버들과 함께
 					그룹을 생성하여 학습 노트를 공유하거나 언제 어디에서나 피드백을 받으세요!</div>
 				

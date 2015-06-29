@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html lang="ko">
 <head>
-<title>스터디의 시작, 페이퍼민트</title>
+<title>{stag}</title>
 <meta charset="utf-8">
 <%@ include file="./commons/_favicon.jspf"%>
 <link rel="stylesheet"

@@ -35,8 +35,8 @@ ul {
 	padding:0;
 }
 
-#jumbotron > h1 > span {
-  color: red;
+#jumbotron > h1 > img {
+  width: 100px;
 }
 
 .wrap {
