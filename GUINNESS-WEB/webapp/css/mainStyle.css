@@ -35,6 +35,10 @@ ul {
 	padding:0;
 }
 
+#jumbotron > h1 > span {
+  color: red;
+}
+
 .wrap {
 	margin: 0 auto;
 }
@@ -878,7 +882,7 @@ div#calendar {
 }
 
 .btn-pm {
-	background-color:#7cc4b5;
+	background-color:red;
 	float:right;
 }
 
