@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import me.stag.config.ApplicationCofigure;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +20,8 @@ public class ReconnectPComments {
 
 	public static List<Map<String, Object>> UpdateParagraphId(String[] originParagraph, String[] editedParagraph,
 			List<Map<String, Object>> pCommentList) {
-		
-		double minSimilarity = 0.5; // 유사도가 50% 이하일 때 부분코멘트가 가리키는 문단 Id는 -1로!
+		//부분코멘트가 가리키는 문단 Id는 -1로!
+		double minSimilarity = ApplicationCofigure.PCOMMENT_MIN_SIMILARITY_RATE;
 		List<String> wordDic = makeDic(originParagraph, editedParagraph, pCommentList);
 
 		// 문단별 벡터 배열 만들기
