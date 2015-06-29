@@ -14,7 +14,7 @@
 	<div class="headerBackground"></div>
 	<div class="content wrap">
 		<div id="leftTopBox">
-			<a href="/" id="brand"> <img src="/img/staglogo.png"> </a>
+			<a href="/" id="brand"> <img src="/img/stagwhitelogo.png"> </a>
 			<div class="searchForm" style="display: none">
 				<input id="searchText" type="text"> <i class="fa fa-search"></i>
 			</div>
