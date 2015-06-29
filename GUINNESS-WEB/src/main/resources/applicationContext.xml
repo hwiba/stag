@@ -10,7 +10,7 @@
 	
 	<tx:annotation-driven />
 	
-	<context:component-scan base-package="org.nhnnext.guinness.service, org.nhnnext.guinness.dao" />
+	<context:component-scan base-package="me.stag.service, me.stag.dao" />
 	
 	<context:property-placeholder location="classpath*:application-properties.xml" />
 	

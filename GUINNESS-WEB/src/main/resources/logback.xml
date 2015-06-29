@@ -9,8 +9,10 @@
 			</pattern>
 		</encoder>
 	</appender>
-
-	<root level="DEBUG">
+	
+	<logger name="me.stag" level="DEBUG" />
+	
+	<root level="WARN">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>
