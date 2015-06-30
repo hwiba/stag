@@ -10,10 +10,11 @@ public class Alarm {
 	private Comment comment;
 	private Group group;
 
-	public Alarm(String alarmId, String alarmStatus, SessionUser writer, User reader, Note note, Comment comment, Group group) {
+	public Alarm(String alarmId, String alarmStatus, String alarmCreateDate, SessionUser writer, User reader, Note note, Comment comment, Group group) {
 		super();
 		this.alarmId = alarmId;
 		this.alarmStatus = alarmStatus;
+		this.alarmCreateDate = alarmCreateDate;
 		this.writer = writer;
 		this.reader = reader;
 		this.note = note;
@@ -22,15 +23,19 @@ public class Alarm {
 	}
 	
 	public Alarm(String alarmId, String alarmStatus, SessionUser writer, User reader, Note note) {
-		this(alarmId, alarmStatus, writer, reader, note, null, null);
+		this(alarmId, alarmStatus, null, writer, reader, note, null, null);
 	}
 	
 	public Alarm(String alarmId, String alarmStatus, SessionUser writer, User reader, Note note, Comment comment) {
-		this(alarmId, alarmStatus, writer, reader, note, comment, null);
+		this(alarmId, alarmStatus, null, writer, reader, note, comment, null);
 	}
 	
 	public Alarm(String alarmId, String alarmStatus, SessionUser writer, User reader, Group group) {
-		this(alarmId, alarmStatus, writer, reader, null, null, group);
+		this(alarmId, alarmStatus, null, writer, reader, null, null, group);
+	}
+	
+	public Alarm(String alarmId, String alarmStatus, String alarmCrateDate, SessionUser writer, User reader, Group group) {
+		this(alarmId, alarmStatus, alarmCrateDate, writer, reader, null, null, group);
 	}
 
 	public String getAlarmId() {

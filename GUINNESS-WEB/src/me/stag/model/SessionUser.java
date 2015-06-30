@@ -10,6 +10,10 @@ public class SessionUser {
 		this.userName = userName;
 		this.userImage = userImage;
 	}
+	
+	public SessionUser(String userName) {
+		this(null, userName, null);
+	}
 
 	public String getUserId() {
 		return userId;

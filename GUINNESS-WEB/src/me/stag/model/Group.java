@@ -29,6 +29,10 @@ public class Group {
 		this(groupId, null, null, "A");
 	}
 	
+	public Group(String groupId, String groupName) {
+		this(groupId, groupName, null, "A");
+	}
+	
 	public boolean checkStatus() {
 		return status.equals("T");
 	}

@@ -8,6 +8,8 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import me.stag.model.Alarm;
+import me.stag.model.Group;
+import me.stag.model.SessionUser;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -54,9 +56,13 @@ public class AlarmDao extends JdbcDaoSupport {
 		return getJdbcTemplate().queryForList(sql, calleeId);
 	}
 
-	public List<Map<String, Object>> listGroups(String calleeId) {
-		String sql = "select A.*, U.userName, G.groupName from GROUP_ALARMS as A, USERS as U, GROUPS as G where A.calleeId=? and A.callerId=U.userId and A.groupId = G.groupId order by A.alarmCreateDate desc;";
-		return getJdbcTemplate().queryForList(sql, calleeId);
+	public List<Object> listGroups(String calleeId) {
+		String sql = "select A.*, U.userId, U.userName, U.userImage, G.groupId, G.groupName from GROUP_ALARMS as A, USERS as U, GROUPS as G where A.calleeId=? and A.callerId=U.userId and A.groupId = G.groupId order by A.alarmCreateDate desc;";
+		return getJdbcTemplate().query(sql, (rs, rowNum) -> new Alarm(rs.getString("alarmId"),
+				rs.getString("alarmStatus"), rs.getString("alarmCreateDate"),
+				new SessionUser(rs.getString("userId"), rs.getString("userName"), rs.getString("userImage")), null,
+				new Group(rs.getString("groupId"), rs.getString("groupName"))
+				), calleeId);
 	}
 
 	public void deleteNote(String alarmId) {

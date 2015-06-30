@@ -65,7 +65,6 @@ public class NoteController {
 
 	@RequestMapping("/notes/reload")
 	protected ResponseEntity<Object> reloadNotes(@RequestParam String groupId, @RequestParam String noteTargetDate) {
-		logger.debug("noteTargetDate:{}", noteTargetDate);
 		if (groupId == null) {
 			throw new UnpermittedAccessNotesException();
 		}
@@ -82,7 +81,6 @@ public class NoteController {
 		return JSONResponseUtil.getJSONResponse(note, HttpStatus.OK);
 	}
 
-	//TODO Note객체로 묶어서 받아오기
 	@RequestMapping(value = "/notes", method = RequestMethod.POST)
 	protected String create(@RequestParam String tempNoteId, @RequestParam String noteText, @RequestParam String noteTargetDate, @RequestParam String groupId, HttpSession session, Model model) throws IOException {
 		String sessionUserId = ServletRequestUtil.getUserIdFromSession(session);
